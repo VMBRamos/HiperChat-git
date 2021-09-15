@@ -65,10 +65,11 @@ coloquei o max-height 0 para poder interagir com a classe de .collapsible p/ qnd
 }
 
 /*classe só para esconder o scroll qnd não precisa ----- PS comentei pois não foi necessário
+  voltando com a classe pq achei que ficaria legal o zoom no chat mas precisaria atualizar as demais funcionalidades*/
 .chat-container::-webkit-scrollbar {
     display: none;
 }
-*/
+
 
 /*bloco total do input onde tem o botão + textUserMsg (outter-container)*-----lembrar de achar uma cor bonita pra colocar*/
 .chat-bar-input-block {
@@ -104,6 +105,7 @@ coloquei o max-height 0 para poder interagir com a classe de .collapsible p/ qnd
     width: 75%;
 }
 
+/*caracteristicas do meu input box~ ñ pode dar overflow em text, setado >right grow*/
 .input-box {
     float: left;
     border: none;
@@ -117,15 +119,17 @@ coloquei o max-height 0 para poder interagir com a classe de .collapsible p/ qnd
     outline: none
 }
 
+/*defino aqui as propriedades do UserText dentro chat*/
 .userText {
-    color: black;
-    font-family: Helvetica;
+     color: black;
+    font-family: Helvetica;  
     font-size: 16px;
     font-weight: normal;
     text-align: right;
     clear: both;
 }
 
+/*classe de outside (container) do chat (somase as msg)*/
 .userText span {
     line-height: 1.5em;
     display: inline-block;
@@ -138,6 +142,7 @@ coloquei o max-height 0 para poder interagir com a classe de .collapsible p/ qnd
     animation: floatup .1s forwards
 }
 
+/*igual a ao UserText*/
 .botText {
     color: #8a4a88;
     font-family: Helvetica;
@@ -146,6 +151,7 @@ coloquei o max-height 0 para poder interagir com a classe de .collapsible p/ qnd
     text-align: left;
 }
 
+/*igual ao userText span*/
 .botText span {
     line-height: 1.5em;
     display: inline-block;
@@ -158,6 +164,7 @@ coloquei o max-height 0 para poder interagir com a classe de .collapsible p/ qnd
     animation: floatup .1s forwards
 }
 
+/*function pra animação do float das msg*/
 @keyframes floatup {
     from {
         transform: translateY(14px);
@@ -169,6 +176,7 @@ coloquei o max-height 0 para poder interagir com a classe de .collapsible p/ qnd
     }
 }
 
+/*Aqui eu defino a classe para quando o elemento muda widht/height da tela e n ficar todo bugado*/
 @media screen and (max-width:600px) {
     .full-chat-block {
         width: 100%;
