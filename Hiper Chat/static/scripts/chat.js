@@ -1,4 +1,5 @@
-// Collapsible
+// função para expandir e fechar o chat, verificar se consigo fazer isso com um Hover para dimunir o tamanho que está ocupando atualmente
+//a webpage
 var coll = document.getElementsByClassName("collapsible");
 
 for (let i = 0; i < coll.length; i++) {
@@ -21,6 +22,8 @@ function getTime() {
     let today = new Date();
     hours = today.getHours();
     minutes = today.getMinutes();
+
+    //if concatenando as horas < 10 p/ deixar o visual melhor ex:05:19 AM
 
     if (hours < 10) {
         hours = "0" + hours;
@@ -47,6 +50,7 @@ function firstBotMessage() {
 firstBotMessage();
 
 // recebe a resposta e processa
+//chamar essa função na API 
 function getHardResponse(userText) {
     let botResponse = getBotResponse(userText);
     let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
@@ -71,6 +75,7 @@ function getResponse() {
     $("#chatbox").append(userHtml);
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 
+    //defini um tempo de resposta para o usuário entender que a msg está sendo processada
     setTimeout(() => {
         getHardResponse(userText);
     }, 1000)
@@ -78,7 +83,7 @@ function getResponse() {
 }
 
 
-// Trata o envio de mensagem via botao 
+// Trata o envio de mensagem via botao --- com esse send verificar se possivel adicionar a função de API
 function buttonSendText(sampleText) {
     let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
 
@@ -93,9 +98,12 @@ function sendButton() {
 }
 
 
-// Enter para enviar a mensagem
+// Enter para enviar a mensagem -- 13=key code pro enter
 $("#textInput").keypress(function (e) {
     if (e.which == 13) {
         getResponse();
     }
 });
+
+//**
+
